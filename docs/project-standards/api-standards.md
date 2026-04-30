@@ -50,3 +50,5 @@ Public access must go through explicit token/share records. Do not make private 
 ## Error Contract
 
 Every project should define its concrete API error response contract in `docs/architecture/`. See [Missing Decisions To Consider](./missing-decisions-to-consider.md) for the reusable default recommendation.
+
+Error responses should include a safe, human-readable message suitable for frontend toast display. Do not expose raw exception text, stack traces, internal paths, secrets, or implementation details in this message.
