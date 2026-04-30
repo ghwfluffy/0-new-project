@@ -28,6 +28,7 @@ An agent should:
 6. Create `docs/development.md`.
 7. Create any additional project-specific architecture docs needed for the initial plan.
 8. Scaffold the application only after project-specific assumptions are clear enough.
+9. Set up validation tooling as part of the scaffold: backend lint/test scripts, frontend test/build scripts, and a root `scripts/validate.sh` when those project areas exist.
 
 ## Top-Level README Template
 
@@ -174,6 +175,8 @@ Run the full validation flow from the repository root:
 ```
 
 During implementation, run the narrowest relevant backend or frontend checks while iterating. If full validation cannot be run, state what was and was not verified.
+
+Validation is required project infrastructure. As soon as backend or frontend code exists, create the matching scripts from `docs/project-standards/validation-scripts.md`, make them executable, and keep this document pointed at the root validation command.
 ````
 
 ## First Project-Specific Architecture Docs
@@ -222,6 +225,7 @@ The agent should leave a new project with:
 - `docs/architecture/README.md`
 - `docs/development.md`
 - copied `docs/project-standards/`
+- validation tooling following `docs/project-standards/validation-scripts.md`
 - clear project-specific open questions
 - a plan for application scaffold, schema, auth, and validation
 
